@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "is NextJS",
+  "description": "This extension displays a banner when __next id is found in the first div of the body tag",
+  "version": "1.0",
+  "permissions": ["activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"]
+    }
+  ]
+}
